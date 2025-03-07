@@ -34,8 +34,3 @@ variable "vpc" {
   description = "name of my vpc"
 }
 
-variable "subnet" {
-  default     = "public_subnet"
-  type        = string
-  description = "name of subnet within VPC"
-}

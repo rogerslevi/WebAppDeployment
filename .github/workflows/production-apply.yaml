@@ -28,5 +28,5 @@ jobs:
       run: terraform init
 
     # Step 5: Run Terraform Apply
-    - name: Run Terraform plan
+    - name: Run Terraform apply
       run: terraform apply --auto-approve
