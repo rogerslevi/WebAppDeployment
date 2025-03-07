@@ -3,7 +3,7 @@ resource "aws_security_group" "WebAppSec" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["217.42.29.254/32", "72.14.201.120/32"]
+    cidr_blocks = ["217.42.29.254/32", "213.86.221.106"]
   }
 
   ingress {
@@ -46,5 +46,9 @@ resource "aws_instance" "WebApp_instance" {
   associate_public_ip_address = true
   tags = {
     Name = var.instance_name
+  }
+
+  lifecycle {
+    prevent_destroy = true
   }
 }
