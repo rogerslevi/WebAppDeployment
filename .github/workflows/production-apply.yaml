@@ -1,1 +1,32 @@
+name: Terraform apply for production
 
+on:
+    workflow_run:
+        workflows: Terraform plan for production
+        types:
+            - completed
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout code
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Step 2: Configure AWS credentials (using GitHub Secrets)
+    - name: Set up AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}      
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
+        aws-region: ${{ secrets.AWS_REGION }} 
+
+    # Step 4: Run Terraform Init
+    - name: Run Terraform Init
+      run: terraform init
+
+    # Step 5: Run Terraform Apply
+    - name: Run Terraform plan
+      run: terraform apply --auto-approve
