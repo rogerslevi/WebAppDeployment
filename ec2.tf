@@ -38,7 +38,7 @@ resource "aws_security_group" "WebAppSec" {
   }
 }
 
-resource "aws_instance" "simple_web_app" {
+resource "aws_instance" "WebApp_instance" {
   ami                         = var.ami
   instance_type               = var.instance_type
   key_name                    = "WebApp"
