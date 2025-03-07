@@ -21,3 +21,21 @@ variable "instance_name" {
   type        = string
   description = "name of the instance"
 }
+
+variable "security" {
+  default     = "WebAppSec"
+  type        = string
+  description = "name of the security group"
+}
+
+variable "vpc" {
+  default     = "WebAppVPC"
+  type        = string
+  description = "name of my vpc"
+}
+
+variable "subnet" {
+  default     = "public_subnet"
+  type        = string
+  description = "name of subnet within VPC"
+}
