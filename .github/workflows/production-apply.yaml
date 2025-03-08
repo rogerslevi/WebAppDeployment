@@ -2,6 +2,8 @@ name: Terraform apply for production
 
 on:
    pull_request:
+    branches:
+      - main
     
 jobs:
   deploy:
