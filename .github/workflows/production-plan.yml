@@ -3,7 +3,7 @@ name: Terraform plan for production
 on:
   push:
     branches:
-      - main
+      - feature/**
 
 jobs:
   deploy:

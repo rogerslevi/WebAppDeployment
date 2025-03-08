@@ -1,10 +1,7 @@
 name: Terraform apply for production
 
 on:
-    workflow_run:
-        workflows: ["Terraform plan for production"]
-        types:
-            - completed
+   pull_request:
     
 jobs:
   deploy:
