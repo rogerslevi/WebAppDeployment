@@ -2,14 +2,14 @@ name: Terraform apply for production
 
 on:
     workflow_run:
-        workflows: Terraform plan for production
+        workflows: ["Terraform plan for production"]
         types:
             - completed
     
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-
+    
     steps:
     # Step 1: Checkout code
     - name: Checkout code
