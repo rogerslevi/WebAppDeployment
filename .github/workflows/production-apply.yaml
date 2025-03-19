@@ -1,4 +1,4 @@
-name: Terraform apply for production
+name: Terraform apply for production.
 
 on:
    workflow_dispatch:
