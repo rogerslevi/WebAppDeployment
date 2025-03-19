@@ -47,7 +47,6 @@ resource "aws_instance" "WebApp_instance" {
   tags = {
     Name = var.instance_name
   }
-
   lifecycle {
     prevent_destroy = true
   }

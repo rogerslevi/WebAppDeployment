@@ -12,6 +12,7 @@ terraform {
 }
 
 terraform {
+  required_version = ">=1.5"
   backend "s3" {
     bucket = "my-terraform-state-levi"
     key    = "state/terraform.tfstate"

@@ -1,14 +1,14 @@
 name: Terraform apply for production
 
 on:
-   pull_request:
+   push:
     branches:
       - main
-    
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-    
+
     steps:
     # Step 1: Checkout code
     - name: Checkout code
@@ -18,9 +18,9 @@ jobs:
     - name: Set up AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}      
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
-        aws-region: ${{ secrets.AWS_REGION }} 
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
 
     # Step 4: Run Terraform Init
     - name: Run Terraform Init
