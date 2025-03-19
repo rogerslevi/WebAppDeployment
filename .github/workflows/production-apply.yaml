@@ -1,9 +1,7 @@
 name: Terraform apply for production
 
 on:
-   push:
-    branches:
-      - main
+   workflow_dispatch:
 
 jobs:
   deploy:
