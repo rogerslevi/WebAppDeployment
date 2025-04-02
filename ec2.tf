@@ -1,5 +1,5 @@
 module "ec2_instance" {
-  source = "/Users/lee/modules/ec2"
+  source = "./terraform/modules/ec2_instance/*"
 
   name = "single-instance"
 
