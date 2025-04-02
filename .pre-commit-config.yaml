@@ -3,7 +3,7 @@ repos:
     rev: v4.4.0  # Use the ref you want to point at
     hooks:
     - id: check-yaml
-      args: [-b, main]
+      args: [main]
     - id: check-json
     - id: trailing-whitespace
 -   repo: https://github.com/antonbabenko/pre-commit-terraform

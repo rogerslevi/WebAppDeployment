@@ -1,13 +1,19 @@
-resource "aws_instance" "WebApp_instance" {
-  ami                         = var.ami
-  instance_type               = var.instance_type
-  security_groups             = [aws_security_group.WebAppSec.name]
-  key_name                    = "WebApp"
-  associate_public_ip_address = true
-  tags = {
-    Name = var.instance_name
-  }
-  lifecycle {
-    prevent_destroy = false
-  }
-}
+# module "ec2_instance" {
+#   source = "/Users/lee/modules/ec2"
+
+#   name = "single-instance"
+
+#   instance_type          = "t2.micro"
+#   key_name               = "WebApp.pem"
+#   monitoring             = true
+#   vpc_security_group_ids = ["sg-12345678"]
+#   subnet_id              = "subnet-eddcdzz4"
+
+#   tags = {
+#     Terraform   = "true"
+#     Environment = "dev"
+#   }
+#   lifecycle = {
+#     prevent_destroy = true
+#   }
+# }
