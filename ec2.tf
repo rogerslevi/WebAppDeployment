@@ -10,7 +10,4 @@ module "ec2_instance" {
   subnet_id              = "subnet-04f5c9565c6fb850e"
 
   tags = {}
-  lifecycle = {
-    prevent_destroy = true
   }
-}
