@@ -3,7 +3,7 @@ resource "aws_security_group" "WebAppSec" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["217.42.29.254/32", "213.86.221.106/32", "213.32.248.64/32"]
+    cidr_blocks = ["217.42.29.254/32", "213.86.221.106/32", "213.32.248.64/32", "156.61.250.251/32"]
   }
 
   ingress {
