@@ -1,5 +1,5 @@
 module "ec2_instance" {
-  source = "modules/ec2_instance"
+  source = "https://github.com/rogerslevi/terraform-aws-ec2-instance"
 
   name = "single-instance"
 
